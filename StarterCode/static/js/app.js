@@ -18,13 +18,15 @@ tableData.forEach(function(ufoData) {
 var button = d3.select("#filter-btn");
 var empty = d3.select("tbody")
 button.on("click", function() {
-    var inputElement = d3.select("#datetime");
+    var inputElement = d3.select(".form-control");
     var inputValue = inputElement.property("value");
-    console.log(date);
+    console.log(inputValue);
     console.log(tableData);
 
-    var filteredData = tableData.filter(date => date.datetime === inputValue);
+    var filteredData = tableData.filter(data => data.datetime === inputValue);
     console.log(filteredData);
+
+    tbody.html("");
 
     filteredData.forEach(function(filteredReport) {
         console.log(filteredReport);
